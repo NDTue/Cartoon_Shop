@@ -1,0 +1,383 @@
+/* File cấu hình chung */
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --text-color-footer: #737373;
+    --primary-color: #00a4fc;   
+    --primary-hover: #00a5fda6;
+    --border-color: #dbdbdb;
+    --normal-hover: #efefef;
+    --star-red-color: #d24559;
+    /* --normal-hover: #fafafa; */
+    --header-height: 120px;
+    --navbar-height: 34px;
+    /* header-with-search = header - navbar */
+    --header-width-search-height: calc( var(--header-height) - var(--navbar-height) )
+    /*
+        box-shadow: 0 1px 12.5px 0 rgba(0, 0, 0, .2); 
+        box-shadow: 0 1px 5px #ccc;
+
+        box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.1);   trc khi hover
+        box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);   sau khi hover
+    */
+
+        /* ========== NOTES ============ */
+    /* Ẩn phần sau của tên nếu quá dài 
+        text-align: start;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;   chỉnh hướng của text chiều dọc 
+        -webkit-line-clamp: 1;  giới hạn text với dòng được chỉ định.
+        overflow: hidden;   Ẩn đi text bị thừa
+    */
+    /* Dropdown Arrow khi hover List 
+        content: "";
+        border-width: 22px 30px;
+        border-style: solid;
+        border-color: transparent transparent var(--white-color) transparent;
+        position: absolute;
+        right: 6px; top: -30px;
+    */
+    /*      Căn giữa mũi tên ngang với Text (top:50%, transform)
+        .category-item--active .category-item__link::before{
+            content: "";
+            position: absolute;
+            border: 4px solid ;
+            border-color: transparent transparent transparent var(--primary-color);
+            left: 6px; top: 50%;
+            transform: translateY(calc(-50% - 1px));
+        }
+    */
+    /*      Chuyển động Text khi hover
+        .category-item__link{
+            position: relative;
+            right: 0;
+            transition: right linear .1s; 
+        }
+        .category-item__link:hover{
+            right: -8px;    --> Khi hover, text sẽ trượt sang phải 8px
+        }    
+    */
+    /*      Tạo Chuyển động cho Product khi hover
+        .product-item{
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+            transition: transform linear .1s;
+            will-change: transform;     trình duyệt sẽ tối ưu cho thuộc tính này
+        }
+        .product-item:hover{
+            transform: translateY(-1px);
+            box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);
+        }
+    */
+    /*      Hiển thị ảnh bằng padding-top
+        padding-top: 100% cho backgroun-img sẽ tương đối với thẻ cha và hiển thị ảnh 
+        .product-item__img{        
+            padding-top: 100%; 
+        }
+    */
+    /*      Tạo label "Yêu thích" cho Product -> Dùng lớp giả
+        .product-item__favorite{
+            position: absolute;
+            top: 10px; left: -4px;
+            color: var(--primary-color);
+            background-color: currentColor;  Đặt màu = màu hiện tại
+        }
+        .product-item__favorite::after{
+            border-top: 6px solid currentColor;  Sử dụng màu từ thẻ cha
+            border-left: 4px solid transparent;  
+            filter: brightness(70%);            Chỉnh độ sáng của màu = 70% ban đầu
+        }
+    */
+    /*          Tạo Label Discount - Hiển Thị Mép Dưới
+        .product-item__discount{
+            position: absolute;
+            top: 0; right: 0;
+            width: 40px; height: 36px;
+            background-color: rgba(28, 82, 217, .85); 
+        }
+        .product-item__discount::after{
+            content: "";
+            position: absolute;
+            left: 0; bottom: -4px;
+            border-width: 0 20px 4px;
+            border-style: solid;
+            border-color: transparent red transparent red;
+        }
+    */
+    /*      Hiển thị thanh cuộn cho Thông Báo có nhiều Item
+        .header__cart-list-item {
+            height: 60vh;   chiều cao = 60% height của trình duyệt
+            overflow-y: auto;   Nếu có nhiều item vượt qá height sẽ hiển thị thanh cuộn trục Y
+        } 
+    
+    */
+    /*      Box Shadow cho Logo Footer 
+        .footer-pay-item{
+            width: 60px;
+            margin: 0 8px 8px 0px;
+            padding: 4px 0 0 4px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+            border-radius: 2px;
+        }
+    */
+}
+
+* {
+    box-sizing: inherit; 
+    scroll-behavior: smooth;
+}
+
+html{
+    font-size: 62.5%; /* set đơn vị kích thước 1rem = 10px */
+    line-height: 1.6rem; /* 16px */
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Phân cấp trong Responsive
+    .grid{
+        .row-1{
+            .column-1{}
+            .column-2{}
+        }
+        .row-2{
+            .column-3{}
+            .column-4{}
+        }
+    }
+*/
+
+/* Set Layout và Responsive */
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+/* Set Col và Row cho Category (Quy tắc Responsive) */
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+.grid__col-2{ /* Layout 2 cột */
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%; /* 100 ÷ 12cột x 2 */
+}
+
+.grid__col-2-4{ /* Layout 5 cột / 12 cột (12÷5=2.4) */
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%; /* 100 ÷ 5cột */
+}
+
+.grid__col-10{ /* Layout 10 cột */
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%; /* 100 ÷ 12cột x 10 */
+}
+
+/* ANIMATION */
+
+/* Animation cho QR code */
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+/* Animation cho Modal */
+@keyframes growth {
+    from{
+        /* Đặt biến */
+        transform: scale(var(--growth-from));
+    }
+    to{
+        /* Đặt biến */
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* MODAL LAYOUT */
+
+/* Căn giữa cho Modal, sử dụng display flex và margin auto*/
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear .5s;
+    display: none;
+}
+
+/* Tạo lớp Overlay */
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.modal__body{
+    --growth-from: 0.5; /* hiệu ứng phóng ra từ 50% */
+    --growth-to: 1; /* hiệu ứng phóng ra đến 100% */
+    height: auto;
+    margin: auto;
+    z-index: 1;
+    animation: growth linear .2s;
+}
+
+/* Buttons style */
+.btn{
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 1.4rem;
+    padding: 0 12px;
+    outline: none;
+    color: var(--text-color);
+    background-color: #dfdcdc;
+    /* background-color: var(--white-color); */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn.btn--primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+/* Nút PRIMARY hover sẽ đổi màu */
+.btn.btn--primary:hover{
+    background-color: var(--primary-hover);
+}
+
+/* Nút THƯỜNG hover sẽ đổi màu */
+.btn.btn--normal:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn.btn--size-s{
+    height: 32px;
+    font-size: 1.4rem;
+    border: 1px solid #B9B9B9;
+}
+
+/* Vô hiệu hóa Buttons */
+.btn.btn--disabled{
+    cursor: not-allowed;
+    color: #4d4a4a;
+}
+.btn.btn--disabled:hover{
+    background-color: #F0F0F0;
+}
+
+/* FORM REGISTER / LOG IN */
+.auth-form__controls{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.auth-form__controls-back{
+    margin-right: 8px;
+}
+
+/* Selection */
+.select-input{
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    min-width: 200px;
+    padding: 0 12px;
+    height: 34px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    box-shadow: 0 1px 5px #ccc;
+}
+
+.select-input:hover .select-input__list{
+    display: block;
+}
+
+.select-input__label{
+    font-size: 1.4rem;
+}
+
+.select-input__icon{
+    font-size: 1.4rem;
+    color: #4A4A4A;
+    position: relative;
+}
+
+.select-input__list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 10px 12px;
+    list-style: none;
+    display: none;
+    z-index: 1;
+}
+
+.select-input__link{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.select-input__link:hover{
+    color: var(--primary-color);
+}
+
+/* PAGINATION */
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.pagination-item{
+    margin: 0 16px;
+}
+.pagination-item--active .pagination-item__link{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+.pagination-item--active .pagination-item__link:hover{
+    background-color: var(--primary-hover);
+}
+
+.pagination-item__link{
+    --height: 30px;
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 400;
+    color: #939393;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    text-align: center;
+    border-radius: 2px;
+}

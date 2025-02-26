@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartoon Shop</title>
+    <!-- Thay href = "link ảnh" sẽ hiển thị ảnh trên web -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/BMO.png">
+    <!-- link reset CSS - Normalize CDN (file min) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Link font chữ Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Link Fontawsome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <!-- BEM -->
+    <div class="app">
+        <!-- Begin Header -->
+        <header class="header">
+            <div class="grid">
+                <!-- Navigation bar -->
+                <nav class="navbar">
+                    <!-- Navbar Left -->
+                    <ul class="navbar__list">
+                        <li class="navbar__item navbar__item--separate navbar__item--hasQR">
+                            Go to the store on the Cartoon-Shop application
+                            <!-- QR CODE -->
+                            <div class="navbar__qr">
+                                <img alt="QR code" class="nav__qr-img"
+                                    src="./assets/img/Github-QR.png">
+                                <div class="nav__qr-apps">
+                                    <a class="nav__qr-link" href="">
+                                        <img alt="App Store" class="nav__qr-download"
+                                            src="./assets/img/app_store.png">
+                                    </a>
+                                    <a class="nav__qr-link" href="">
+                                        <img alt="Google Play" class="nav__qr-download"
+                                            src="./assets/img/google_play.png">
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="navbar__item no-hover">
+                            Follow us on
+                            <a target="_blank" href="https://www.facebook.com/" class="navbar__icon-link">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a target="_blank" href="https://www.instagram.com/" class="navbar__icon-link">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Navbar Right -->
+                    <ul class="navbar__list">
+                        <!-- Notification -->
+                        <li class="navbar__item navbar__item--hasNoti">
+                            <a href="" class="navbar__item-link">
+                                <i class="fa-regular fa-bell"></i>Notifications
+                            </a>
+                            <!-- Scale Notification List -->
+                            <div class="navbar__notify">
+                                <header class="navbar__notify-header">
+                                    <h3>Recently Received Notifications</h3>
+                                </header>
+                                <ul class="navbar__notify-list">
+                                    <li class="navbar__notify-item">
+                                        <a href="" class="navbar__notify-link">
+                                            <img alt="" class="navbar__notify-img"
+                                                src="./assets/img/RegularShow-NecklaceSet.jpg">
+                                            <div class="navbar__notify-info">
+                                                <span class="navbar__notify-name">Regular Show necklace set</span>
+                                                <span class="navbar__notify-des">Looted from Pinterest</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="navbar__notify-item">
+                                        <a href="" class="navbar__notify-link">
+                                            <img alt="" class="navbar__notify-img"
+                                                src="./assets/img/RegularShow-Stickers.jpg">
+                                            <div class="navbar__notify-info">
+                                                <span class="navbar__notify-name">Regular Show Stickers</span>
+                                                <span class="navbar__notify-des">Looted from Pinterest</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li class="navbar__notify-item">
+                                        <a href="" class="navbar__notify-link">
+                                            <img alt="" class="navbar__notify-img"
+                                                src="./assets/img/AdventureTime-Pens.jpg">
+                                            <div class="navbar__notify-info">
+                                                <span class="navbar__notify-name">Adventure Time Pen</span>
+                                                <span class="navbar__notify-des">Looted from Pinterest</span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <footer class="navbar__notify-footer">
+                                    <a href="" class="navbar__notify-footer-btn">Show All</a>
+                                </footer>
+                            </div>
+                        </li>
+                        <!-- Support -->
+                        <li class="navbar__item">
+                            <a href="" class="navbar__item-link">
+                                <i class="fa-regular fa-question"></i>Help
+                            </a>
+                        </li>
+                        <!-- REGISTER -->
+                        <!-- <li class="navbar__item navbar__item--bold navbar__item--separate">Sign Up</li> -->
+                        <!-- LOG IN -->
+                        <!-- <li class="navbar__item navbar__item--bold">Log In</li> -->
+                    
+                        <!-- USER -->
+                        <li class="navbar__item navbar__user">
+                            <img class="navbar__user-img" src="./assets/img/BMO.png" alt="">
+                            <span class="navbar__user-name">Rupertinfg</span>
+                        
+                            <ul class="navbar__user-menu">
+                                <li class="navbar__user-item">
+                                    <a href="">My Account</a>
+                                </li>
+                                <li class="navbar__user-item">
+                                    <a href="">My Purchase</a>
+                                </li>
+                                <li class="navbar__user-item navbar__user-item--separate">
+                                    <a href="">Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <!-- Logo / SearchBar / Cart -->
+                <div class="header-with-search">
+                    <!-- Logo -->
+                    <div class="header__logo">
+                        <a href="#" class="header__logo-link">
+                            <img class="header__logo-img" alt="logo" src="./assets/img/adventure-time.png">
+                        </a>
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="header__search">
+                        <div class="header__search-input-wrap">
+                            <input type="text" class="header__search-input" placeholder="Search for products">
+                            <!-- Search History -->
+                            <div class="header__search-history">    
+                                <h3 class="header__search-history-heading">History Search</h3>
+                                <ul class="header__search-history-list">
+                                    <li class="header__search-history-item">
+                                        <a href="">Stickers</a>
+                                    </li>
+                                    <li class="header__search-history-item">
+                                        <a href="">Back pack</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Search Option -->
+                        <div class="header__search-select">
+                            <span class="header__search-select-label">In This Shop</span>
+                            <i class="header__search-select-icon fa-solid fa-angle-down"></i>
+                            
+                            <ul class="header__search-options">
+                                <li class="header__search-option-item header__search-option-item--active">
+                                    <span>In This Shop</span>
+                                    <i class="fa-solid fa-check"></i>
+                                </li>
+                                <li class="header__search-option-item">
+                                    <span>In Amazon</span>
+                                    <i class="ms-20 fa-solid fa-check"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Search Button -->
+                        <button class="header__search-btn">
+                            <i class="header__search-btn-icon fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+
+                    <!-- Cart -->
+                    <div class="header__cart">
+                        <div class="header__cart-wrap">
+                            <i class=" header__cart-icon fa-solid fa-cart-shopping"></i>
+                            <span class="header__cart-number-badge">3</span>
+                            
+                            <div class="header__cart-list ">
+                                <!-- No Cart Image: header__cart-list--noCart -->
+                                <img class="header__cart-noCart-img" src="./assets/img/no_cart.png" alt="No Cart">
+                                <span class="header__cart-noCart-msg">No product yet</span>
+                                <!-- Cart Has Product -->
+                                <h4 class="header__cart-heading">Recently Added Products</h4>
+                                <ul class="header__cart-list-item">
+                                    <!-- Cart Items -->
+                                    <li class="header__cart-item">
+                                        <img class="header__cart-img" src="https://assets.bigcartel.com/product_images/379149279/1000234400.jpg?auto=format&fit=max&w=1400" alt="BMO Hat">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">BMO Hat</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">$24.99</span>
+                                                    <span class="header__cart-item-multiply">X</span>
+                                                    <span class="header__cart-item-quantity">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-des">Type: Wool fabric</span>
+                                                <span class="header__cart-item-remove">Delete</span>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img class="header__cart-img" src="https://assets.bigcartel.com/product_images/381522090/1000235365.jpg?auto=format&fit=max&w=1400" alt="Adventure Time Pins">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Adventure Time Pins</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">$14.99</span>
+                                                    <span class="header__cart-item-multiply">X</span>
+                                                    <span class="header__cart-item-quantity">1</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-des">Type: Plastic</span>
+                                                <span class="header__cart-item-remove">Delete</span>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img class="header__cart-img" src="https://i.pinimg.com/736x/e8/c6/99/e8c699f97cf6ff5327746251b4ab6943.jpg" alt="Regular Show Stickers">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Regular Show Stickers</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">$9.99</span>
+                                                    <span class="header__cart-item-multiply">X</span>
+                                                    <span class="header__cart-item-quantity">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-des">Type: Stickers</span>
+                                                <span class="header__cart-item-remove">Delete</span>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    <li class="header__cart-item">
+                                        <img class="header__cart-img" src="https://assets.bigcartel.com/product_images/379149279/1000234400.jpg?auto=format&fit=max&w=1400" alt="BMO Hat">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">BMO Hat</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">$24.99</span>
+                                                    <span class="header__cart-item-multiply">X</span>
+                                                    <span class="header__cart-item-quantity">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-des">Type: Wool fabric</span>
+                                                <span class="header__cart-item-remove">Delete</span>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img class="header__cart-img" src="https://assets.bigcartel.com/product_images/381522090/1000235365.jpg?auto=format&fit=max&w=1400" alt="Adventure Time Pins">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Adventure Time Pins Adventure Time Pins Adventure Time Pins Adventure Time Pins</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">$14.99</span>
+                                                    <span class="header__cart-item-multiply">X</span>
+                                                    <span class="header__cart-item-quantity">1</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-des">Type: Plastic</span>
+                                                <span class="header__cart-item-remove">Delete</span>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="header__cart-item">
+                                        <img class="header__cart-img" src="https://i.pinimg.com/736x/e8/c6/99/e8c699f97cf6ff5327746251b4ab6943.jpg" alt="Regular Show Stickers">
+                                        <div class="header__cart-item-info">
+                                            <div class="header__cart-item-head">
+                                                <h5 class="header__cart-item-name">Regular Show Stickers</h5>
+                                                <div class="header__cart-item-price-wrap">
+                                                    <span class="header__cart-item-price">$9.99</span>
+                                                    <span class="header__cart-item-multiply">X</span>
+                                                    <span class="header__cart-item-quantity">2</span>
+                                                </div>
+                                            </div>
+                                            <div class="header__cart-item-body">
+                                                <span class="header__cart-item-des">Type: Stickers</span>
+                                                <span class="header__cart-item-remove">Delete</span>                                                
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+
+                                <a href="#" class="header__cart-view-cart btn btn--primary">View My Shopping Cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Begin Container -->
+        <div class="app__container">
+            <div class="grid">
+                <div class="grid__row app__content"> <!-- Set row và col chia Layout và để sau này Responsive -->
+                    <div class="grid__col-2"> <!-- Layout 2 cột / 12 cột -->
+                        <!-- CATEGORY Navigation -->
+                        <nav class="category">
+                            <h3 class="category__heading">Category</h3>
+                            <!-- Category List -->
+                            <ul class="category-list">
+                                <li class="category-item category-item--active">
+                                    <!-- <a href="#" class="category-item__link">Cotton Soul Regular Show TVs Stacked Unisex-Adults T-Shirt Black Short Sleeve Small</a> -->
+                                    <a href="#" class="category-item__link">T-Shirt</a>
+                                </li>
+                                <li class="category-item">
+                                    <!-- <a href="#" class="category-item__link">Mordecai And Rigby Play Video Game Sticker | Mordecai-and-rigby</a> -->
+                                    <a href="#" class="category-item__link">Sticker</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Brick Block (254 PCS)</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="grid__col-10"> <!-- Layout 10 cột / 12 cột -->
+                        <!-- Sort Bar -->
+                        <div class="sort-bar">
+                            <span class="sort-bar__label">Sort by</span>
+                            <button class="sort-bar__btn btn">Popular</button>
+                            <button class="sort-bar__btn btn btn--primary">Latest</button>
+                            <button class="sort-bar__btn btn">Top Sales</button>
+
+                            <div class="select-input">
+                                <span class="select-input__label">Price</span>
+                                <i class="select-input__icon fa-solid fa-angle-down"></i>
+                                <!-- List Options -->
+                                <ul class="select-input__list">
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Price: Low to Hight</a>
+                                    </li>
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Price: Hight to Low</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Sort Bar Paginate -->
+                            <div class="sort-bar__page">
+                                <span class="sort-bar__page-num">
+                                    <span class="sort-bar__page-current">1</span>/2
+                                </span>
+
+                                <div class="sort-bar__page-control">
+                                    <a href="" class="sort-bar__page-btn sort-bar__page-btn--disabled">
+                                        <i class="sort-bar__page-icon fa-solid fa-angle-left"></i>
+                                    </a>
+                                    <a href="" class="sort-bar__page-btn">
+                                        <i class="sort-bar__page-icon fa-solid fa-angle-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PRODUCTS -->
+                        <div class="product">
+                            <div class="grid__row"> <!-- Sử dụng row vì đã nằm trong grid -->
+                                <!-- Product Item -->
+                                    <!-- Regular Show Tshirt -->
+                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                    <a href="" class="product-item">
+                                        <div class="product-item__img" style="background-image: url(./assets/img/regular-show-Tshirt.jpg);"></div>
+                                        <h4 class="product-item__name">Cotton Soul Regular Show TVs Stacked Unisex-Adults T-Shirt Black Short Sleeve Small</h4>
+                                        <div class="product-item__price">
+                                            <span class="product-item__price-old">$154.00</span>
+                                            <span class="product-item__price-current">$139.00</span>
+                                        </div>
+                                        <!-- Action -->
+                                        <div class="product-item__action">
+                                            <span class="product-item__like product-item__like--liked">
+                                                <i class="product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="product-item__rating">
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star-half-stroke"></i>
+                                            </div>
+                                            <span class="product-item__sold">88 Sold</span>
+                                        </div>
+                                        <!-- Origin -->
+                                        <div class="product-item__origin">
+                                            <span class="product-item__brand">Cartoon Network</span>
+                                            <span class="product-item__origin-name">United States</span>
+                                        </div>
+                                        <!-- Favorite -->
+                                        <div class="product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Favorite</span>
+                                        </div>
+                                        <!-- Discount -->
+                                        <div class="product-item__discount">
+                                            <span class="product-item__discount-percent">10%</span>
+                                            <span class="product-item__discount-label">SALE</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                    <!-- Vampire Sweater -->
+                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                    <a href="" class="product-item">
+                                        <div class="product-item__img" style="background-image: url(./assets/img/Vampire-Sweater.jpg);"></div>
+                                        <h4 class="product-item__name">Vampire Handmade Knitted Sweater</h4>
+                                        <div class="product-item__price">
+                                            <span class="product-item__price-old">$154.00</span>
+                                            <span class="product-item__price-current">$139.00</span>
+                                        </div>
+                                        <!-- Action -->
+                                        <div class="product-item__action">
+                                            <span class="product-item__like product-item__like--liked">
+                                                <i class="product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="product-item__rating">
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star-half-stroke"></i>
+                                            </div>
+                                            <span class="product-item__sold">50 Sold</span>
+                                        </div>
+                                        <!-- Origin -->
+                                        <div class="product-item__origin">
+                                            <span class="product-item__brand">Cartoon Network</span>
+                                            <span class="product-item__origin-name">United States</span>
+                                        </div>
+                                        <!-- Favorite -->
+                                        <div class="product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Favorite</span>
+                                        </div>
+                                        <!-- Discount -->
+                                        <div class="product-item__discount">
+                                            <span class="product-item__discount-percent">10%</span>
+                                            <span class="product-item__discount-label">SALE</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                    <!-- Benson Crash Out -->
+                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                    <a href="" class="product-item">
+                                        <div class="product-item__img" style="background-image: url(./assets/img/Benson-CrashOut.jpg);"></div>
+                                        <h4 class="product-item__name">Benson Crash Out Tshirt</h4>
+                                        <div class="product-item__price">
+                                            <span class="product-item__price-old">$170.00</span>
+                                            <span class="product-item__price-current">$153.00</span>
+                                        </div>
+                                        <!-- Action -->
+                                        <div class="product-item__action">
+                                            <span class="product-item__like product-item__like--liked">
+                                                <i class="product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="product-item__rating">
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="product-item__sold">43 Sold</span>
+                                        </div>
+                                        <!-- Origin -->
+                                        <div class="product-item__origin">
+                                            <span class="product-item__brand">Cartoon Network</span>
+                                            <span class="product-item__origin-name">United States</span>
+                                        </div>
+                                        <!-- Favorite -->
+                                        <div class="product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Favorite</span>
+                                        </div>
+                                        <!-- Discount -->
+                                        <div class="product-item__discount">
+                                            <span class="product-item__discount-percent">10%</span>
+                                            <span class="product-item__discount-label">SALE</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                    <!-- Brick Block -->
+                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                    <a href="" class="product-item">
+                                        <div class="product-item__img" style="background-image: url(./assets/img/Brick-Block.jpg);"></div>
+                                        <h4 class="product-item__name">Brick Block (254 PCS)</h4>
+                                        <div class="product-item__price">
+                                            <span class="product-item__price-old">$39.00</span>
+                                            <span class="product-item__price-current">$33.00</span>
+                                        </div>
+                                        <!-- Action -->
+                                        <div class="product-item__action">
+                                            <span class="product-item__like product-item__like--liked">
+                                                <i class="product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="product-item__rating">
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-regular fa-star"></i>
+                                            </div>
+                                            <span class="product-item__sold">22 Sold</span>
+                                        </div>
+                                        <!-- Origin -->
+                                        <div class="product-item__origin">
+                                            <span class="product-item__brand">Cartoon Network</span>
+                                            <span class="product-item__origin-name">United States</span>
+                                        </div>
+                                        <!-- Favorite -->
+                                        <div class="product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Favorite</span>
+                                        </div>
+                                        <!-- Discount -->
+                                        <div class="product-item__discount">
+                                            <span class="product-item__discount-percent">15%</span>
+                                            <span class="product-item__discount-label">SALE</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                    <!-- Rick and Morty Tshirt -->
+                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                    <a href="" class="product-item">
+                                        <div class="product-item__img" style="background-image: url(./assets/img/Rick&Morty-Tshirt.jpg);"></div>
+                                        <h4 class="product-item__name">Rick and Morty Pink graphic t shirt size Medium Unisex</h4>
+                                        <div class="product-item__price">
+                                            <span class="product-item__price-old">$25.00</span>
+                                            <span class="product-item__price-current">$10.00</span>
+                                        </div>
+                                        <!-- Action -->
+                                        <div class="product-item__action">
+                                            <span class="product-item__like product-item__like--liked">
+                                                <i class="product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="product-item__rating">
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-regular fa-star"></i>
+                                            </div>
+                                            <span class="product-item__sold">168 Sold</span>
+                                        </div>
+                                        <!-- Origin -->
+                                        <div class="product-item__origin">
+                                            <span class="product-item__brand">Cartoon Network</span>
+                                            <span class="product-item__origin-name">United States</span>
+                                        </div>
+                                        <!-- Favorite -->
+                                        <div class="product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Favorite</span>
+                                        </div>
+                                        <!-- Discount -->
+                                        <div class="product-item__discount">
+                                            <span class="product-item__discount-percent">33%</span>
+                                            <span class="product-item__discount-label">SALE</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                    <!-- BMO Hat -->
+                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                    <a href="" class="product-item">
+                                        <div class="product-item__img" style="background-image: url(./assets/img/BMO-Hat.jpg);"></div>
+                                        <h4 class="product-item__name">BMO Wool Fabric Hat</h4>
+                                        <div class="product-item__price">
+                                            <span class="product-item__price-old">$30.00</span>
+                                            <span class="product-item__price-current">$24.99</span>
+                                        </div>
+                                        <!-- Action -->
+                                        <div class="product-item__action">
+                                            <span class="product-item__like product-item__like--liked">
+                                                <i class="product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="product-item__rating">
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star-half-stroke"></i>
+                                                <i class="product-item__star--red fa-regular fa-star"></i>
+                                            </div>
+                                            <span class="product-item__sold">77 Sold</span>
+                                        </div>
+                                        <!-- Origin -->
+                                        <div class="product-item__origin">
+                                            <span class="product-item__brand">Cartoon Network</span>
+                                            <span class="product-item__origin-name">United States</span>
+                                        </div>
+                                        <!-- Favorite -->
+                                        <div class="product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Favorite</span>
+                                        </div>
+                                        <!-- Discount -->
+                                        <div class="product-item__discount">
+                                            <span class="product-item__discount-percent">7%</span>
+                                            <span class="product-item__discount-label">SALE</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                    <!-- IceKing Gunter -->
+                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                    <a href="" class="product-item">
+                                        <div class="product-item__img" style="background-image: url(./assets/img/IceKing-Gunter.jpg);"></div>
+                                        <h4 class="product-item__name">Ice King and Gunter Stickers</h4>
+                                        <div class="product-item__price">
+                                            <span class="product-item__price-old">$9.00</span>
+                                            <span class="product-item__price-current">$4.50</span>
+                                        </div>
+                                        <!-- Action -->
+                                        <div class="product-item__action">
+                                            <span class="product-item__like product-item__like--liked">
+                                                <i class="product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="product-item__rating">
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="product-item__sold">223 Sold</span>
+                                        </div>
+                                        <!-- Origin -->
+                                        <div class="product-item__origin">
+                                            <span class="product-item__brand">Cartoon Network</span>
+                                            <span class="product-item__origin-name">United States</span>
+                                        </div>
+                                        <!-- Favorite -->
+                                        <div class="product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Favorite</span>
+                                        </div>
+                                        <!-- Discount -->
+                                        <div class="product-item__discount">
+                                            <span class="product-item__discount-percent">20%</span>
+                                            <span class="product-item__discount-label">SALE</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                    <!-- Adventure Time Pins -->
+                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                    <a href="" class="product-item">
+                                        <div class="product-item__img" style="background-image: url(./assets/img/Adventure-Time-Pins.jpg);"></div>
+                                        <h4 class="product-item__name">Adventure Time Pins</h4>
+                                        <div class="product-item__price">
+                                            <span class="product-item__price-old">$19.99</span>
+                                            <span class="product-item__price-current">$9.50</span>
+                                        </div>
+                                        <!-- Action -->
+                                        <div class="product-item__action">
+                                            <span class="product-item__like product-item__like--liked">
+                                                <i class="product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="product-item__rating">
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-regular fa-star"></i>
+                                            </div>
+                                            <span class="product-item__sold">510 Sold</span>
+                                        </div>
+                                        <!-- Origin -->
+                                        <div class="product-item__origin">
+                                            <span class="product-item__brand">Cartoon Network</span>
+                                            <span class="product-item__origin-name">United States</span>
+                                        </div>
+                                        <!-- Favorite -->
+                                        <div class="product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Favorite</span>
+                                        </div>
+                                        <!-- Discount -->
+                                        <div class="product-item__discount">
+                                            <span class="product-item__discount-percent">50%</span>
+                                            <span class="product-item__discount-label">SALE</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                    <!-- Gumball -->
+                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                    <a href="" class="product-item">
+                                        <div class="product-item__img" style="background-image: url(./assets/img/Gumball.jpg);"></div>
+                                        <h4 class="product-item__name">The Amazing World Of Gumball Tshirt</h4>
+                                        <div class="product-item__price">
+                                            <span class="product-item__price-old">$72.65</span>
+                                            <span class="product-item__price-current">$41.41</span>
+                                        </div>
+                                        <!-- Action -->
+                                        <div class="product-item__action">
+                                            <span class="product-item__like product-item__like--liked">
+                                                <i class="product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="product-item__rating">
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star-half-stroke"></i>
+                                            </div>
+                                            <span class="product-item__sold">56 Sold</span>
+                                        </div>
+                                        <!-- Origin -->
+                                        <div class="product-item__origin">
+                                            <span class="product-item__brand">Cartoon Network</span>
+                                            <span class="product-item__origin-name">United States</span>
+                                        </div>
+                                        <!-- Favorite -->
+                                        <div class="product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Favorite</span>
+                                        </div>
+                                        <!-- Discount -->
+                                        <div class="product-item__discount">
+                                            <span class="product-item__discount-percent">43%</span>
+                                            <span class="product-item__discount-label">SALE</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                    <!-- Not 4 Sale -->
+                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                    <a href="" class="product-item">
+                                        <div class="product-item__img" style="background-image: url(./assets/img/AdventureTime-Characters.jpg);"></div>
+                                        <h4 class="product-item__name">Adventure Time Charaters (This is Not For Sale)</h4>
+                                        <div class="product-item__price">
+                                            <span class="product-item__price-old">FUCK YOU</span>
+                                            <span class="product-item__price-current">AHAHA</span>
+                                        </div>
+                                        <!-- Action -->
+                                        <div class="product-item__action">
+                                            <span class="product-item__like product-item__like--liked">
+                                                <i class="product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="product-item__like-icon-fill fa-solid fa-heart"></i>
+                                            </span>
+                                            <div class="product-item__rating">
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                                <i class="product-item__star--red fa-solid fa-star"></i>
+                                            </div>
+                                            <span class="product-item__sold">0 Sold</span>
+                                        </div>
+                                        <!-- Origin -->
+                                        <div class="product-item__origin">
+                                            <span class="product-item__brand">Cartoon Network</span>
+                                            <span class="product-item__origin-name">United States</span>
+                                        </div>
+                                        <!-- Favorite -->
+                                        <div class="product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Favorite</span>
+                                        </div>
+                                        <!-- Discount -->
+                                        <div class="product-item__discount">
+                                            <span class="product-item__discount-percent">0%</span>
+                                            <span class="product-item__discount-label">SALE</span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- PAGINATION -->
+                        <ul class="pagination product__pagination">
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">
+                                    <i class="pagination-item__icon fa-solid fa-angle-left"></i>
+                                </a>
+                            </li>
+                            <li class="pagination-item pagination-item--active">
+                                <a href="" class="pagination-item__link">1</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">2</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">3</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">4</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">5</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">...</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">10</a>
+                            </li>
+                            <li class="pagination-item">
+                                <a href="" class="pagination-item__link">
+                                    <i class="pagination-item__icon fa-solid fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Container -->
+
+        <!-- Begin Footer -->
+        <footer class="footer">
+            <div class="grid">
+                    <!-- Information Block -->
+                <div class="grid__row">
+                        <!-- CUSTOMER SERVICE -->
+                    <div class="grid__col-2-4">
+                        <h3 class="footer__heading">Customer Service</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Help Centre</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Cartoon-Shop Blog</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Payment</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Shipping</a>
+                            </li>
+                        </ul>
+                    </div>
+                        <!-- ABOUT -->
+                    <div class="grid__col-2-4">
+                        <h3 class="footer__heading">About Carton-Shop</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">About Us</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Privacy Policy</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Flash Deals</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">Media Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                        <!-- PAYMENT & LOGISTIC-->
+                    <div class="grid__col-2-4">
+                        <!-- Payments -->
+                        <div class="footer-list">
+                            <h3 class="footer__heading">Payment</h3>
+                            <ul class="footer-pay-list">
+                                    <!-- Visa -->
+                                <li class="footer-pay-item">
+                                    <a href="" class="footer-pay-item__link">
+                                        <img class="footer-pay-item__img" src="https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8" alt="VISA">
+                                    </a>
+                                </li>
+                                    <!-- MasterCard -->
+                                <li class="footer-pay-item">
+                                    <a href="" class="footer-pay-item__link">
+                                        <img class="footer-pay-item__img" src="https://down-vn.img.susercontent.com/file/a0a9062ebe19b45c1ae0506f16af5c16" alt="MasterCard">
+                                    </a>
+                                </li>
+                                    <!-- Japan Credit Bureau (JBC) -->
+                                <li class="footer-pay-item">
+                                    <a href="" class="footer-pay-item__link">
+                                        <img class="footer-pay-item__img" src="https://down-vn.img.susercontent.com/file/38fd98e55806c3b2e4535c4e4a6c4c08" alt="JBC">
+                                    </a>
+                                </li>
+                                    <!-- American Express -->
+                                <li class="footer-pay-item">
+                                    <a href="" class="footer-pay-item__link">
+                                        <img class="footer-pay-item__img" src="https://down-vn.img.susercontent.com/file/bc2a874caeee705449c164be385b796c" alt="merican Express">
+                                    </a>
+                                </li>
+                                    <!-- Shopee Pay -->
+                                <li class="footer-pay-item">
+                                    <a href="" class="footer-pay-item__link">
+                                        <img class="footer-pay-item__img" src="https://down-vn.img.susercontent.com/file/9263fa8c83628f5deff55e2a90758b06" alt="Shopee Pay">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Logistics -->
+                        <div class="footer-list">
+                            <h3 class="footer__heading">Logistics</h3>
+                            <ul class="footer-pay-list">
+                                    <!-- Ahamove -->
+                                <li class="footer-pay-item">
+                                    <a href="" class="footer-pay-item__link">
+                                        <img class="footer-pay-item__img" src="https://down-vn.img.susercontent.com/file/vn-50009109-ec3ae587db6309b791b78eb8af6793fd" alt="Ahamove">
+                                    </a>
+                                </li>
+                                    <!-- J&T Express -->
+                                <li class="footer-pay-item">
+                                    <a href="" class="footer-pay-item__link">
+                                        <img class="footer-pay-item__img" src="https://down-vn.img.susercontent.com/file/0d349e22ca8d4337d11c9b134cf9fe63" alt="J&T Express">
+                                    </a>
+                                </li>
+                                    <!-- Shopee Express -->
+                                <li class="footer-pay-item">
+                                    <a href="" class="footer-pay-item__link">
+                                        <img class="footer-pay-item__img" src="https://down-vn.img.susercontent.com/file/vn-50009109-159200e3e365de418aae52b840f24185" alt="">
+                                    </a>
+                                </li>
+                                    <!-- Ninja Van -->
+                                <li class="footer-pay-item">
+                                    <a href="" class="footer-pay-item__link">
+                                        <img class="footer-pay-item__img" src="https://down-vn.img.susercontent.com/file/6e3be504f08f88a15a28a9a447d94d3d" alt="Shopee Express">
+                                    </a>
+                                </li>
+                                    <!-- Be -->
+                                <li class="footer-pay-item">
+                                    <a href="" class="footer-pay-item__link">
+                                        <img class="footer-pay-item__img" src="https://down-vn.img.susercontent.com/file/0b3014da32de48c03340a4e4154328f6" alt="Be">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                        <!-- FOLLOW US -->
+                    <div class="grid__col-2-4">
+                        <h3 class="footer__heading">Follow Us</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">    
+                                <a href="https://www.linkedin.com/in/duc-tue-nguyen-043008306/" class="footer-item__link">
+                                    <i class="footer-item__icon fa-brands fa-linkedin"></i>
+                                    LinkedIn
+                                </a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="" class="footer-item__link">
+                                    <i class="footer-item__icon fa-brands fa-facebook"></i>
+                                    Facebook
+                                </a>
+                            </li>    
+                            <li class="footer-item">    
+                                <a href="" class="footer-item__link">
+                                    <i class="footer-item__icon fa-brands fa-instagram"></i>
+                                    Instagram
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                        <!-- APP DOWNLOAD -->
+                    <div class="grid__col-2-4">
+                        <h3 class="footer__heading">Cartoon-Shop App Download</h3>
+                        <div class="footer__donwload">
+                            <img class="footer__download-qr" src="./assets/img/Github-QR.png" alt="Download App QR">
+                            <div class="footer__download-apps">
+                                <a class="footer__download-app-link">
+                                    <img class="footer__download-apps-img" src="./assets/img/app_store.png" alt="App Store">
+                                </a>
+                                <!-- <img class="footer__download-apps-img" src="https://down-vn.img.susercontent.com/file/ad01628e90ddf248076685f73497c163" alt="App Store"> -->
+                                <a class="footer__download-app-link">
+                                    <img class="footer__download-apps-img" src="./assets/img/google_play.png" alt="Google Play">
+                                    <!-- <img class="footer__download-apps-img" src="https://down-vn.img.susercontent.com/file/ae7dced05f7243d0f3171f786e123def" alt="Google Play"> -->
+                                </a>
+                                <a class="footer__download-app-link">
+                                    <img class="footer__download-apps-img" src="./assets/img/AppGallery.png" alt="AppGallery">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    <!-- COUNTRY & REGION -->
+                <div class="grid__row">
+                    <div class="footer__regions">
+                        <div class="footer__region-copyright">© 2025 Cartoon-Shop. All Rights Reserved.</div>
+                        <ul class="footer__region-countries-list">
+                            <a class="footer__region-country-item">Country & Region:</a>
+                            <a class="footer__region-country-item">Vietnam</a>
+                            <a class="footer__region-country-item">United States</a>
+                            <a class="footer__region-country-item">Europe</a>
+                            <a class="footer__region-country-item">Malaysia</a>
+                            <a class="footer__region-country-item">Thailand</a>
+                            <a class="footer__region-country-item">Philippines</a>
+                            <a class="footer__region-country-item">Brazil</a>
+                            <a class="footer__region-country-item">México</a>
+                            <a class="footer__region-country-item">Colombia</a>
+                            <a class="footer__region-country-item">Chile</a>
+                            <a class="footer__region-country-item">Taiwan</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- COPYRIGHT -->
+            <div class="footer__bottom">
+                <div class="grid">
+                    <div class="footer__bottom-policy">
+                        <ul class="footer__bottom-policy-list">
+                            <li class="footer__bottom-policy-item">
+                                <a href="" class="footer__bottom-policy-link">Privacy Policy</a>
+                            </li>
+                            <li class="footer__bottom-policy-item">
+                                <a href="" class="footer__bottom-policy-link">Term of service</a>
+                            </li>
+                            <li class="footer__bottom-policy-item">
+                                <a href="" class="footer__bottom-policy-link">Shipping policy</a>
+                            </li>
+                            <li class="footer__bottom-policy-item">
+                                <a href="" class="footer__bottom-policy-link">Violation</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="footer__text">© 2025 - Copyright belongs to <a href="https://github.com/NDTue">NDTue</a></p>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+    </div>
+
+    <!-- MODAL REGISTER / LOG IN -->
+    <div class="modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__body">
+            <!-- Register Form -->
+            <div class="auth-form">
+                <!-- Form Container -->
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Sign Up</h3>
+                        <span class="auth-form__toggle-btn">Log In</span>
+                    </div>
+                    <!-- Input Fields -->
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Email">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Password">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Confirm Password">
+                        </div>
+                    </div>
+                    <!-- Policy -->
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            By registering, you agree with Cartoon-shop on the terms of
+                            <a href="" class="auth-form__text-link">service</a> &
+                            <a href="" class="auth-form__text-link">privacy policies</a>
+                        </p>
+                    </div>
+                    <!-- Navigate Back & Submit-->
+                    <div class="auth-form__controls">
+                        <button class="btn btn--normal auth-form__controls-back">BACK</button>
+                        <button class="btn btn--primary">Sign Up</button>
+                    </div>
+                </div>
+                <!-- Social Network -->
+                <div class="auth-form__socials">
+                    <a target="_blank" href="https://facebook.com"
+                        class="auth-form__socials--facebook btn btn--size-s btn--width-icon">
+                        <img class="auth-form__socials-icon" src="./assets/img/facebook.png" alt="facebook">
+                        <span class="auth-form__socials-title">
+                            Facebook
+                        </span>
+                    </a>
+                    <a target="_blank" href="https://google.com"
+                        class="auth-form__socials--google btn btn--size-s btn--width-icon">
+                        <img class="auth-form__socials-icon" src="./assets/img/google.png" alt="facebook">
+                        <span class="auth-form__socials-title">
+                            Google
+                        </span>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Login Form -->
+            <div class="auth-form">
+                <div class="auth-form__container"> <!-- Form Container -->
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Log In</h3>
+                        <span class="auth-form__toggle-btn">Sign Up</span>
+                    </div>
+                    <!-- Input Fields -->
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Email">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Password">
+                        </div>
+                    </div>
+                    <!-- Forgot Password & Support -->
+                    <div class="auth-form__aside">
+                        <div class="auth-form__support">
+                            <a href="" class="auth-form__support-link auth-form__support-forgot">
+                                Forgot Password
+                            </a>
+                            <span class="auth-form__support-separate"></span>
+                            <a href="" class="auth-form__support-link">
+                                Need help?
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Navigate Back & Submit-->
+                    <div class="auth-form__controls">
+                        <button class="btn btn--normal auth-form__controls-back">BACK</button>
+                        <button class="btn btn--primary">LOG IN</button>
+                    </div>
+                </div>
+                <!-- Social Network -->
+                <div class="auth-form__socials">
+                    <a target="_blank" href="https://facebook.com"
+                        class="auth-form__socials--facebook btn btn--size-s btn--width-icon">
+                        <img class="auth-form__socials-icon" src="./assets/img/facebook.png" alt="facebook">
+                        <span class="auth-form__socials-title">
+                            Facebook
+                        </span>
+                    </a>
+                    <a target="_blank" href="https://google.com"
+                        class="auth-form__socials--google btn btn--size-s btn--width-icon">
+                        <img class="auth-form__socials-icon" src="./assets/img/google.png" alt="facebook">
+                        <span class="auth-form__socials-title">
+                            Google
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>   
+    <!-- END MODAL -->
+</body>
+</html>
