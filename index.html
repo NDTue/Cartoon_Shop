@@ -14,8 +14,10 @@
         rel="stylesheet">
     <!-- Link Fontawsome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
     <link rel="stylesheet" href="./assets/css/base.css">
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/responsive.css">
 </head>
 
 <body>
@@ -23,9 +25,9 @@
     <div class="app">
         <!-- Begin Header -->
         <header class="header">
-            <div class="grid">
+            <div class="grid wide">
                 <!-- Navigation bar -->
-                <nav class="navbar">
+                <nav class="navbar hide-on-mobile-tablet">
                     <!-- Navbar Left -->
                     <ul class="navbar__list">
                         <li class="navbar__item navbar__item--separate navbar__item--hasQR">
@@ -140,15 +142,24 @@
 
                 <!-- Logo / SearchBar / Cart -->
                 <div class="header-with-search">
+                    <!-- Search on Mobile -->
+                    <label for="mobile-search-checkbox" class="header__mobile-search">
+                        <i class="header__mobile-search-icon fa-solid fa-magnifying-glass"></i>
+                    </label>
+
                     <!-- Logo -->
-                    <div class="header__logo">
+                    <div class="header__logo hide-on-tablet"> <!-- Ẩn trên Tablet-->
                         <a href="#" class="header__logo-link">
                             <img class="header__logo-img" alt="logo" src="./assets/img/adventure-time.png">
                         </a>
                     </div>
 
+                    <!-- Phải đặt id = for trong label trên mới bấm vào hiển thị được-->
+                    <!-- Dùng cho Responsive, bấm vào Kính lúp sẽ hiển thị phần tìm kiếm -->
+                    <input id="mobile-search-checkbox" class="header__search-checkbox" hidden type="checkbox" >
+
                     <!-- Search Bar -->
-                    <div class="header__search">
+                    <div class="header__search "> <!-- Ẩn trên Mobile-->
                         <div class="header__search-input-wrap">
                             <input type="text" class="header__search-input" placeholder="Search for products">
                             <!-- Search History -->
@@ -316,14 +327,29 @@
 
                 </div>
             </div>
+            <!-- Sort Bar on Mobile & Tablet -->
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Relative</a>
+                </li>
+                <li class="header__sort-item header__sort-item--active">
+                    <a href="" class="header__sort-link">Latest</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Top Sales</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Price</a>
+                </li>
+            </ul>
         </header>
         <!-- End Header -->
 
         <!-- Begin Container -->
         <div class="app__container">
-            <div class="grid">
-                <div class="grid__row app__content"> <!-- Set row và col chia Layout và để sau này Responsive -->
-                    <div class="grid__col-2"> <!-- Layout 2 cột / 12 cột -->
+            <div class="grid wide">
+                <div class="row sm-gutter app__content"> <!-- Set row và col chia Layout và để sau này Responsive -->
+                    <div class="col l-2 m-0 c-0"> <!-- Layout 2 cột / 12 cột -->
                         <!-- CATEGORY Navigation -->
                         <nav class="category">
                             <h3 class="category__heading">Category</h3>
@@ -335,18 +361,27 @@
                                 </li>
                                 <li class="category-item">
                                     <!-- <a href="#" class="category-item__link">Mordecai And Rigby Play Video Game Sticker | Mordecai-and-rigby</a> -->
-                                    <a href="#" class="category-item__link">Sticker</a>
+                                    <a href="#" class="category-item__link">Stickers</a>
                                 </li>
                                 <li class="category-item">
                                     <a href="#" class="category-item__link">Brick Block (254 PCS)</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Sweaters</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Hats</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="#" class="category-item__link">Pens</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
                     
-                    <div class="grid__col-10"> <!-- Layout 10 cột / 12 cột -->
+                    <div class="col l-10 m-12 c-12"> <!-- Layout 10 cột / 12 cột -->
                         <!-- Sort Bar -->
-                        <div class="sort-bar">
+                        <div class="sort-bar hide-on-mobile-tablet"> <!-- Ẩn trên Mobile và Tablet-->
                             <span class="sort-bar__label">Sort by</span>
                             <button class="sort-bar__btn btn">Popular</button>
                             <button class="sort-bar__btn btn btn--primary">Latest</button>
@@ -382,12 +417,49 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- CATEGORY on Mobile -->
+                        <nav class="mobile-category">
+                            <ul class="mobile-category__list">
+                                <li class="mobile-category__item">
+                                    <a class="mobile-category__link" href="">
+                                        <span class="mobile-category__name">T-Shirt</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a class="mobile-category__link" href="">
+                                        <span class="mobile-category__name">Stickers</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a class="mobile-category__link" href="">
+                                        <span class="mobile-category__name">Brick Block (254 PCS) Brick Block (254 PCS)</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a class="mobile-category__link" href="">
+                                        <span class="mobile-category__name">Sweaters</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a class="mobile-category__link" href="">
+                                        <span class="mobile-category__name">Hats</span>
+                                    </a>
+                                </li>
+                                <li class="mobile-category__item">
+                                    <a class="mobile-category__link" href="">
+                                        <span class="mobile-category__name">Pens</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
                         <!-- PRODUCTS -->
                         <div class="product">
-                            <div class="grid__row"> <!-- Sử dụng row vì đã nằm trong grid -->
+                            <div class="row sm-gutter"> <!-- Sử dụng row vì đã nằm trong grid -->
                                 <!-- Product Item -->
                                     <!-- Regular Show Tshirt -->
-                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                <div class="col l-2-4 m-4 c-6"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
                                     <a href="" class="product-item">
                                         <div class="product-item__img" style="background-image: url(./assets/img/regular-show-Tshirt.jpg);"></div>
                                         <h4 class="product-item__name">Cotton Soul Regular Show TVs Stacked Unisex-Adults T-Shirt Black Short Sleeve Small</h4>
@@ -428,7 +500,7 @@
                                     </a>
                                 </div>
                                     <!-- Vampire Sweater -->
-                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                <div class="col l-2-4 m-4 c-6"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
                                     <a href="" class="product-item">
                                         <div class="product-item__img" style="background-image: url(./assets/img/Vampire-Sweater.jpg);"></div>
                                         <h4 class="product-item__name">Vampire Handmade Knitted Sweater</h4>
@@ -469,7 +541,7 @@
                                     </a>
                                 </div>
                                     <!-- Benson Crash Out -->
-                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                <div class="col l-2-4 m-4 c-6"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
                                     <a href="" class="product-item">
                                         <div class="product-item__img" style="background-image: url(./assets/img/Benson-CrashOut.jpg);"></div>
                                         <h4 class="product-item__name">Benson Crash Out Tshirt</h4>
@@ -510,7 +582,7 @@
                                     </a>
                                 </div>
                                     <!-- Brick Block -->
-                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                <div class="col l-2-4 m-4 c-6"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
                                     <a href="" class="product-item">
                                         <div class="product-item__img" style="background-image: url(./assets/img/Brick-Block.jpg);"></div>
                                         <h4 class="product-item__name">Brick Block (254 PCS)</h4>
@@ -551,7 +623,7 @@
                                     </a>
                                 </div>
                                     <!-- Rick and Morty Tshirt -->
-                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                <div class="col l-2-4 m-4 c-6"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
                                     <a href="" class="product-item">
                                         <div class="product-item__img" style="background-image: url(./assets/img/Rick&Morty-Tshirt.jpg);"></div>
                                         <h4 class="product-item__name">Rick and Morty Pink graphic t shirt size Medium Unisex</h4>
@@ -592,7 +664,7 @@
                                     </a>
                                 </div>
                                     <!-- BMO Hat -->
-                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                <div class="col l-2-4 m-4 c-6"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
                                     <a href="" class="product-item">
                                         <div class="product-item__img" style="background-image: url(./assets/img/BMO-Hat.jpg);"></div>
                                         <h4 class="product-item__name">BMO Wool Fabric Hat</h4>
@@ -633,7 +705,7 @@
                                     </a>
                                 </div>
                                     <!-- IceKing Gunter -->
-                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                <div class="col l-2-4 m-4 c-6"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
                                     <a href="" class="product-item">
                                         <div class="product-item__img" style="background-image: url(./assets/img/IceKing-Gunter.jpg);"></div>
                                         <h4 class="product-item__name">Ice King and Gunter Stickers</h4>
@@ -674,7 +746,7 @@
                                     </a>
                                 </div>
                                     <!-- Adventure Time Pins -->
-                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                <div class="col l-2-4 m-4 c-6"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
                                     <a href="" class="product-item">
                                         <div class="product-item__img" style="background-image: url(./assets/img/Adventure-Time-Pins.jpg);"></div>
                                         <h4 class="product-item__name">Adventure Time Pins</h4>
@@ -715,7 +787,7 @@
                                     </a>
                                 </div>
                                     <!-- Gumball -->
-                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                <div class="col l-2-4 m-4 c-6"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
                                     <a href="" class="product-item">
                                         <div class="product-item__img" style="background-image: url(./assets/img/Gumball.jpg);"></div>
                                         <h4 class="product-item__name">The Amazing World Of Gumball Tshirt</h4>
@@ -756,7 +828,7 @@
                                     </a>
                                 </div>
                                     <!-- Not 4 Sale -->
-                                <div class="grid__col-2-4"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
+                                <div class="col l-2-4 m-4 c-6"> <!-- Layout 5 cột / 12 cột (12÷5=2.4) -->
                                     <a href="" class="product-item">
                                         <div class="product-item__img" style="background-image: url(./assets/img/AdventureTime-Characters.jpg);"></div>
                                         <h4 class="product-item__name">Adventure Time Charaters (This is Not For Sale)</h4>
@@ -841,11 +913,11 @@
 
         <!-- Begin Footer -->
         <footer class="footer">
-            <div class="grid">
+            <div class="grid wide footer__content">
                     <!-- Information Block -->
-                <div class="grid__row">
+                <div class="row">
                         <!-- CUSTOMER SERVICE -->
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Customer Service</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -863,7 +935,7 @@
                         </ul>
                     </div>
                         <!-- ABOUT -->
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">About Carton-Shop</h3>
                         <ul class="footer-list">
                             <li class="footer-item">
@@ -881,7 +953,7 @@
                         </ul>
                     </div>
                         <!-- PAYMENT & LOGISTIC-->
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <!-- Payments -->
                         <div class="footer-list">
                             <h3 class="footer__heading">Payment</h3>
@@ -956,11 +1028,11 @@
                         </div>
                     </div>
                         <!-- FOLLOW US -->
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-4 c-6">
                         <h3 class="footer__heading">Follow Us</h3>
                         <ul class="footer-list">
                             <li class="footer-item">    
-                                <a href="https://www.linkedin.com/in/duc-tue-nguyen-043008306/" class="footer-item__link">
+                                <a target="_blank" href="https://www.linkedin.com/in/duc-tue-nguyen-043008306/" class="footer-item__link">
                                     <i class="footer-item__icon fa-brands fa-linkedin"></i>
                                     LinkedIn
                                 </a>
@@ -980,9 +1052,9 @@
                         </ul>
                     </div>
                         <!-- APP DOWNLOAD -->
-                    <div class="grid__col-2-4">
+                    <div class="col l-2-4 m-8 c-12">
                         <h3 class="footer__heading">Cartoon-Shop App Download</h3>
-                        <div class="footer__donwload">
+                        <div class="footer__download">
                             <img class="footer__download-qr" src="./assets/img/Github-QR.png" alt="Download App QR">
                             <div class="footer__download-apps">
                                 <a class="footer__download-app-link">
@@ -1001,9 +1073,12 @@
                     </div>
                 </div>
                     <!-- COUNTRY & REGION -->
-                <div class="grid__row">
-                    <div class="footer__regions">
+                <div class="row">
+                    <div class="col l-4 m-4 c-12 footer__regions">
                         <div class="footer__region-copyright">© 2025 Cartoon-Shop. All Rights Reserved.</div>
+                    </div>
+
+                    <div class="col l-8 m-8 c-0 footer__regions">
                         <ul class="footer__region-countries-list">
                             <a class="footer__region-country-item">Country & Region:</a>
                             <a class="footer__region-country-item">Vietnam</a>
@@ -1023,24 +1098,30 @@
             </div>
             <!-- COPYRIGHT -->
             <div class="footer__bottom">
-                <div class="grid">
-                    <div class="footer__bottom-policy">
-                        <ul class="footer__bottom-policy-list">
-                            <li class="footer__bottom-policy-item">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-3 m-3 c-6">
+                            <div class="footer__bottom-policy-item">
                                 <a href="" class="footer__bottom-policy-link">Privacy Policy</a>
-                            </li>
-                            <li class="footer__bottom-policy-item">
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-6">
+                            <div class="footer__bottom-policy-item">
                                 <a href="" class="footer__bottom-policy-link">Term of service</a>
-                            </li>
-                            <li class="footer__bottom-policy-item">
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-6">
+                            <div class="footer__bottom-policy-item">
                                 <a href="" class="footer__bottom-policy-link">Shipping policy</a>
-                            </li>
-                            <li class="footer__bottom-policy-item">
+                            </div>
+                        </div>
+                        <div class="col l-3 m-3 c-6">
+                            <div class="footer__bottom-policy-item footer__bottom-policy-item--no-border">
                                 <a href="" class="footer__bottom-policy-link">Violation</a>
-                            </li>
-                        </ul>
+                            </div>
+                        </div>
                     </div>
-                    <p class="footer__text">© 2025 - Copyright belongs to <a href="https://github.com/NDTue">NDTue</a></p>
+                    <p class="footer__text">© 2025 - Copyright belongs to <a target="_blank" href="https://github.com/NDTue">NDTue</a></p>
                 </div>
             </div>
         </footer>

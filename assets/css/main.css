@@ -3,6 +3,10 @@
     color: var(--white-color) !important;
 }
 
+.app{
+    overflow: hidden;
+}
+
 .header{
     height: var(--header-height);
     background-image: linear-gradient(0, #00A5FD, #2092f6);
@@ -469,12 +473,24 @@
     margin: 0 8px;
 }
 
+/* Search on Mobile */
+.header__mobile-search{
+    padding: 8px 12px;
+    display: none;
+}
+
+.header__mobile-search-icon{
+    font-size: 2.6rem;
+    color: var(--white-color);
+}
+
 /* Logo */
 .header__logo{
     height: 100%;
     cursor: pointer;
     margin-right: 16px;
     width: 190px;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__logo-link{
@@ -488,6 +504,13 @@
     width: auto;
     height: auto;
     display: block;
+}
+
+/*  Dùng cho Responsive
+    Bấm vào sẽ hiển thị phần Tìm kiếm
+*/
+.header__search-checkbox:checked ~ .header__search{
+    display: flex;
 }
 
 /* SEARCH BAR */
@@ -678,6 +701,7 @@
     position: relative;
     display: inline-block;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-icon{
@@ -776,7 +800,7 @@
 .header__cart-list-item{
     padding-left: 0;
     list-style: none;
-    height: 60vh;
+    max-height: 60vh;
     overflow-y: auto;
 }
 /* Cart Items */
@@ -865,6 +889,58 @@
     margin: 0 12px 12px 0;
 }
 
+/* Header Sort Bar On Mobile & Tablet*/
+.header__sort-bar{
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: var(--header-sort-bar-height);
+    background-color: var(--white-color);
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    display: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.header__sort-item{
+    flex: 1;
+    padding: 0;
+}
+
+.header__sort-link{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    display: block;
+    height: 100%;
+    line-height: var(--header-sort-bar-height);
+    text-align: center;
+    position: relative;
+}
+.header__sort-link::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 60%;
+    border-left: 1px solid #e5e5e5;
+    transform: translateY(-50%);
+}
+.header__sort-link:first-child .header__sort-link::before{
+    display: none;
+}
+
+.header__sort-item--active .header__sort-link{
+    color:  var(--primary-color);
+}
+.header__sort-item--active{
+    border-bottom: 2px solid var(--primary-color);
+}
+
 /* CONTAINER - CONTENT */
 .app__container{
     background-color: #f5f5f5;
@@ -872,6 +948,7 @@
 
 .app__content{
     padding-top: 36px;
+    margin: 0 4px;
 }
 
 .category{
@@ -1018,6 +1095,64 @@
     color: #555;
 }
 
+/* CATEGORY on Mobile */
+.mobile-category{
+    display: none;
+}
+
+.mobile-category__list{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto; /*Hiển thị thanh scroll ngang*/
+}
+.mobile-category__list::-webkit-scrollbar{ /* Ẩn Thanh scroll ngang */
+    display: none;
+}
+
+.mobile-category__item{
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+/*  '3n': cứ mỗi 3 item có màu này
+    '+ 1': sẽ quay về item đầu tiên*/
+.mobile-category__item:nth-of-type(3n + 1) .mobile-category__link{ 
+    background-color: #87AFD8;
+}
+.mobile-category__item:nth-of-type(3n + 2) .mobile-category__link{ /* '+ 2': sẽ từ item thứ 2*/
+    background-color: #76C9BD;
+}
+.mobile-category__item:nth-of-type(3n + 3) .mobile-category__link{ /* '+ 3': sẽ từ item thứ 3*/
+    background-color: #88CD81;
+}
+
+.mobile-category__link{
+    --line-height: 2rem;
+    text-decoration: none;
+    color: var(--white-color);
+    line-height: var(--line-height); /*text nằm dòng 1*/
+    height: calc(var(--line-height) * 2); /*text nằm dòng 2*/
+    width: 110px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0 6px;
+}
+
+.mobile-category__name{
+    font-size: 1.4rem;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
 /* PRODUCT */
 .product{
     margin-bottom: 10px;
@@ -1033,6 +1168,7 @@
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
     transition: transform linear .1s;
     will-change: transform;
+    -webkit-tap-highlight-color: transparent;
 }
 .product-item:hover{
     transform: translateY(-1px);
@@ -1215,6 +1351,8 @@ i.product-item__like-icon-fill{
 /* PAGINATION */
 .product__pagination{
     margin: 48px 0 32px;
+    padding-left: 0;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* FOOTER */
@@ -1232,6 +1370,7 @@ i.product-item__like-icon-fill{
 .footer-list{
     padding-left: 0;
     list-style: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .footer-item__link{
@@ -1251,7 +1390,7 @@ i.product-item__like-icon-fill{
     margin: -1px 8px 0 0;
 }
 /* App Download */
-.footer__donwload{
+.footer__download{
     display: flex;
 }
 
@@ -1301,7 +1440,7 @@ i.product-item__like-icon-fill{
 .footer__region-countries-list{
     display: flex;
     list-style: none;
-
+    flex-wrap: wrap;
 }
 
 .footer__region-country-item{
@@ -1339,22 +1478,18 @@ i.product-item__like-icon-fill{
     margin-top: 32px;
 }
 
-.footer__bottom-policy-list{
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    margin: 36px 0;
-    font-size: 1.3rem;
-    text-transform: uppercase;
-}
 
 .footer__bottom-policy-item{
-    margin: 0 10px;
     border-right: 1px solid #ccc;
-    padding-right: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    -webkit-tap-highlight-color: transparent;
+    margin: 36px 0;
+    text-transform: uppercase;
 }
-.footer__bottom-policy-item:last-child{
+.footer__bottom-policy-item--no-border{
     border: none;
 }
 
@@ -1372,6 +1507,7 @@ i.product-item__like-icon-fill{
 .footer__text a{
     text-decoration: none;
     color: var(--primary-color);
+    -webkit-tap-highlight-color: transparent;
 }
 
 

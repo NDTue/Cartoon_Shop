@@ -1,27 +1,3 @@
-/* File cấu hình chung */
-:root{
-    --white-color: #fff;
-    --black-color: #000;
-    --text-color: #333;
-    --text-color-footer: #737373;
-    --primary-color: #00a4fc;   
-    --primary-hover: #00a5fda6;
-    --border-color: #dbdbdb;
-    --normal-hover: #efefef;
-    --star-red-color: #d24559;
-    /* --normal-hover: #fafafa; */
-    --header-height: 120px;
-    --navbar-height: 34px;
-    /* header-with-search = header - navbar */
-    --header-width-search-height: calc( var(--header-height) - var(--navbar-height) )
-    /*
-        box-shadow: 0 1px 12.5px 0 rgba(0, 0, 0, .2); 
-        box-shadow: 0 1px 5px #ccc;
-
-        box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.1);   trc khi hover
-        box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);   sau khi hover
-    */
-
         /* ========== NOTES ============ */
     /* Ẩn phần sau của tên nếu quá dài 
         text-align: start;
@@ -120,6 +96,50 @@
             border-radius: 2px;
         }
     */
+    /*      Hiển thị Border ngăn cách từng item - căn giữa border
+        .header__sort-link{
+            position: relative;
+        }
+        .header__sort-link::before{
+            content: "";
+            position: absolute;
+            top: 50%;       50% của thẻ cha
+            left: 0;
+            height: 60%;
+            border-left: 1px solid #e5e5e5;
+            transform: translateY(-50%);    50% của chính nó
+        }
+    */
+
+/* File cấu hình chung */
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --text-color-footer: #737373;
+    --primary-color: #00a4fc;   
+    --primary-hover: #00a5fda6;
+    --border-color: #dbdbdb;
+    --normal-hover: #efefef;
+    --star-red-color: #d24559;
+    /* --normal-hover: #fafafa; */
+    --header-height: 120px;
+    --navbar-height: 34px;
+    /* header-with-search-height = header - navbar */
+    --header-width-search-height: calc( var(--header-height) - var(--navbar-height) );
+    --header-sort-bar-height: 46px;
+    /*
+        box-shadow: 0 1px 12.5px 0 rgba(0, 0, 0, .2); 
+        box-shadow: 0 1px 5px #ccc;
+
+        box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.1);   trc khi hover
+        box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.05);   sau khi hover
+
+            ## Bỏ đi hiệu ứng select và tap trên Mobile
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+    */
 }
 
 * {
@@ -148,15 +168,6 @@ html{
 */
 
 /* Set Layout và Responsive */
-.grid{
-    width: 1200px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.grid__full-width{
-    width: 100%;
-}
 
 /* Set Col và Row cho Category (Quy tắc Responsive) */
 .grid__row{
@@ -350,7 +361,7 @@ html{
     color: var(--primary-color);
 }
 
-/* PAGINATION */
+/* PRODUCT PAGINATION */
 .pagination{
     display: flex;
     justify-content: center;
